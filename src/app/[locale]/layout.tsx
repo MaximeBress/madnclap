@@ -20,10 +20,12 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider>
-          <Navbar />
-          {children}
-        </NextIntlClientProvider>
+        <div className="md:!py-6 lg:!py-6 xl:!py-6">
+          <NextIntlClientProvider>
+            <Navbar />
+            {children}
+          </NextIntlClientProvider>
+        </div>
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -9,8 +10,389 @@ export default function Home() {
   const t = useTranslations('Homepage');
 
   return (
-    <div>
-      <h1>{t('title')}</h1>
+    <div className="shrink-0 grow">
+      <section className="section-frame br-fix overflow-hidden md:mx-6 md:rounded-[1rem] lg:mx-6 lg:rounded-[1rem] xl:mx-6 xl:rounded-[1rem]">
+        <div className="wrapper image-wrapper bg-image bg-overlay bg-overlay-500 relative z-0 bg-[url(/img/cocon_showreel_image.png)] bg-cover bg-scroll bg-[center_center] bg-no-repeat before:absolute before:top-0 before:left-0 before:z-[1] before:block before:h-full before:w-full before:bg-[rgba(30,34,40,.5)] before:content-['']">
+          <div className="container pt-32 pb-28 !text-center lg:pt-[12.5rem] lg:pb-36 xl:pt-[12.5rem] xl:pb-36">
+            <div className="mx-[-15px] flex flex-wrap">
+              <div
+                className="xxl:w-6/12 !mx-auto w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-9/12 lg:w-8/12 xl:w-7/12"
+                data-cues="zoomIn"
+                data-group="page-title"
+                data-interval="-200"
+                data-delay="500"
+              >
+                <h2 className="h6 !mb-5 !tracking-[0.05rem] !text-white uppercase">{t('title')}</h2>
+                <h3 className="!mb-7 !text-[calc(1.395rem_+_1.74vw)] !leading-[1.15] !text-white xl:!text-[2.7rem]">
+                  {t('Hero.title')}
+                </h3>
+                <a
+                  href="./assets/media/movie.mp4"
+                  className="btn btn-circle btn-white btn-play ripple !relative z-[2] !mx-auto inline-flex !h-[3.5rem] !w-[3.5rem] cursor-pointer items-center justify-center !rounded-[100%] !p-0 !text-[calc(1.355rem_+_1.26vw)] leading-none before:absolute before:inset-0 before:z-[-1] before:block before:animate-[ripple-1_2s_infinite_ease-in-out] before:rounded-[50%] before:bg-[#ffffff] before:opacity-80 before:content-[''] after:absolute after:inset-0 after:z-[-1] after:block after:animate-[ripple-2_2s_infinite_ease-in-out] after:rounded-[50%] after:bg-[#ffffff] after:opacity-60 after:content-[''] after:[animation-delay:0.5s] hover:translate-y-0 xl:!text-[2.3rem]"
+                  data-glightbox
+                >
+                  <i className="icn-caret-right !relative z-[2] !ml-[0.15rem] !text-[calc(1.355rem_+_1.26vw)] before:content-['\\e900']"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="overflow-hidden">
+            <div className="divider mx-[-0.5rem] !text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60">
+                <path fill="currentColor" d="M0,0V60H1440V0A5771,5771,0,0,1,0,0Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="wrapper !bg-[#ffffff]">
+        <div className="container pt-[4.5rem] pb-20 md:pt-24 md:pb-28 lg:pt-24 lg:pb-28 xl:pt-24 xl:pb-28">
+          <div className="!relative">
+            <div
+              className="shape rellax !absolute -right-[2.2rem] -bottom-[0.5rem] z-[1] !h-[6rem] !w-[6rem] !rounded-[50%] !bg-[#edf2fc]"
+              data-rellax-speed="1"
+            ></div>
+            <div
+              className="shape bg-dot primary rellax absolute -top-[0.5rem] -left-[2.5rem] !h-[7rem] !w-[6rem] bg-[radial-gradient(#fab758_2px,transparent_2.5px)] opacity-50"
+              data-rellax-speed="1"
+            ></div>
+            <div className="mx-[-15px] !mt-[-25px] flex flex-wrap !text-center md:mx-[-12.5px] lg:mx-[-12.5px] xl:mx-[-12.5px]">
+              <div className="!mt-[25px] w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 md:!px-[12.5px] lg:w-4/12 lg:!px-[12.5px] xl:w-4/12 xl:!px-[12.5px]">
+                <div className="card !mb-6 !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]">
+                  <figure className="card-img-top overlay overlay-1 group">
+                    <Image
+                      src="/img/camera_home.png"
+                      alt={t('Hero.subtitle1')}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  </figure>
+                  <div className="card-body p-4">
+                    <h3 className="h4 !mb-0">{t('Hero.subtitle1')}</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="!mt-[25px] w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 md:!px-[12.5px] lg:w-4/12 lg:!px-[12.5px] xl:w-4/12 xl:!px-[12.5px]">
+                <div className="card !mb-6 !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]">
+                  <figure className="card-img-top overlay overlay-1 group">
+                    <Image
+                      src="/img/laura_home.png"
+                      alt={t('Hero.subtitle2')}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  </figure>
+                  <div className="card-body p-4">
+                    <h3 className="h4 !mb-0">{t('Hero.subtitle2')}</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="!mt-[25px] w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 md:!px-[12.5px] lg:w-4/12 lg:!px-[12.5px] xl:w-4/12 xl:!px-[12.5px]">
+                <div className="card !mb-6 !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]">
+                  <figure className="card-img-top overlay overlay-1 group">
+                    <Image
+                      src="/img/orchestre_home.png"
+                      alt={t('Hero.subtitle3')}
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: '100%', height: 'auto' }}
+                    />
+                  </figure>
+                  <div className="card-body p-4">
+                    <h3 className="h4 !mb-0">{t('Hero.subtitle3')}</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div className="wrapper bg-[rgba(246,247,249,1)]">
+          <div className="container py-[5rem] md:!py-[7rem] lg:!py-[7rem] xl:!py-[7rem]">
+            <div className="mx-[-15px] !mt-[-50px] flex flex-wrap items-center lg:mx-0 xl:mx-0">
+              <div className="!mt-[50px] w-full max-w-full flex-[0_0_auto] !px-[15px] lg:w-6/12 lg:px-0 xl:w-6/12 xl:px-0">
+                <div className="mx-[-15px] !mt-[-30px] flex flex-wrap !text-center">
+                  <div className="!mt-[30px] w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 lg:w-6/12 xl:w-6/12">
+                    <div className="card !mb-6 !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]">
+                      <figure className="card-img-top overlay overlay-1 group">
+                        <Image
+                          src="/img/wolbe1_about.png"
+                          alt={t('about.subtitle1')}
+                          width={600}
+                          height={400}
+                        />
+                      </figure>
+                      <div className="card-body p-4">
+                        <h3 className="h4 !mb-0">{t('about.subtitle1')}</h3>
+                      </div>
+                    </div>
+                    <div className="card !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)]">
+                      <figure className="card-img-top overlay overlay-1 group">
+                        <Image
+                          src="/img/wolbealt_about.png"
+                          alt={t('about.subtitle2')}
+                          width={600}
+                          height={400}
+                        />
+                      </figure>
+                      <div className="card-body p-4">
+                        <h3 className="h4 !mb-0">{t('about.subtitle2')}</h3>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="!mt-[30px] w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 lg:w-6/12 xl:w-6/12">
+                    <div className="card !mb-6 !shadow-[0_0.25rem_1.75rem_rgba(30,34,40,0.07)] md:!mt-6 lg:!mt-6 xl:!mt-6">
+                      <figure className="card-img-top overlay overlay-1 group">
+                        <Image
+                          src="/img/BuonaOnda_about.png"
+                          alt={t('about.subtitle3')}
+                          width={600}
+                          height={400}
+                        />
+                      </figure>
+                      <div className="card-body p-4">
+                        <h3 className="h4 !mb-0">{t('about.subtitle3')}</h3>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="!mt-[50px] w-full max-w-full flex-[0_0_auto] !px-[15px] lg:!ml-[8.33333333%] lg:w-5/12 lg:px-0 xl:!ml-[8.33333333%] xl:w-5/12 xl:px-0">
+                <h2 className="!mb-3 !text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold xl:!text-[1.7rem]">
+                  {t('about.title')}
+                </h2>
+
+                <p className="lead !text-[1.1rem] !leading-[1.55] font-medium">
+                  {t('about.text1')}
+                </p>
+                <p className="lead !text-[1.1rem] !leading-[1.55] font-medium">
+                  {t('about.text2')}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="py-5">
+        <div className="mx-0 !mt-[-40px] flex flex-wrap items-center md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px]">
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/grt-gaz.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/rakuten.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/la-seine-musicale.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/wolbe.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/neotiss.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/my-jolie-candle2.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/streetpress.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/cnrs.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+          <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
+            <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
+              <Image
+                src="/img/datastorm.png"
+                alt={t('Hero.subtitle3')}
+                width={0}
+                height={0}
+                sizes="100vw"
+                style={{ width: '100%', height: 'auto' }}
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <section id="pricing">
+        <div className="wrapper image-wrapper bg-image bg-overlay relative z-0 bg-[url(/img/telephone.png)] bg-cover bg-fixed bg-[center_center] bg-no-repeat before:absolute before:top-0 before:left-0 before:z-[1] before:block before:h-full before:w-full before:bg-[rgba(30,34,40,.5)] before:content-['']">
+          <div className="container py-[5rem] md:!py-[7rem] lg:!py-[7rem] xl:!py-[7rem]">
+            <div className="mx-[-15px] flex flex-wrap">
+              <div className="!mx-auto w-full max-w-full flex-[0_0_auto] !px-[15px] xl:w-9/12">
+                <div className="card border-0 !bg-[rgba(255,255,255,.9)]">
+                  <div className="card-body p-[40px] lg:!px-24 lg:!py-16 xl:!px-24 xl:!py-16">
+                    <h2 className="!mb-3 !text-center !text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold xl:!text-[1.7rem]">
+                      Contact
+                    </h2>
+                    <p className="lead !mb-10 !text-[1.1rem] !leading-[1.55] font-medium">
+                      {t('contact.title')}
+                    </p>
+                    <form
+                      className="contact-form needs-validation"
+                      method="post"
+                      action="./assets/php/contact.php"
+                      noValidate
+                    >
+                      <div className="messages"></div>
+                      <div className="mx-[-10px] flex flex-wrap">
+                        <div className="w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 lg:w-6/12 xl:w-6/12">
+                          <div className="form-floating relative !mb-4">
+                            <input
+                              id="form_name"
+                              type="text"
+                              name="name"
+                              className="form-control relative m-0 block h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] w-full rounded-[0.4rem] border-0 border-solid border-[rgba(8,60,130,0.07)] bg-[rgba(255,255,255,.7)] bg-clip-padding p-[.6rem_1rem] !pr-9 text-[.75rem] !leading-[1.25] font-medium !text-[#60697b] shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] transition-[border-color] duration-[0.15s] ease-in-out placeholder:!text-[#959ca9] placeholder:opacity-100 focus:!border-0 focus:bg-[rgba(255,255,255,.7)] focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus-visible:!border-0"
+                              placeholder=""
+                              required
+                            />
+                            <label
+                              htmlFor="form_name"
+                              className="font-Manrope pointer-events-none !absolute top-0 left-0 !z-[2] !mb-2 !inline-block h-full origin-[0_0] overflow-hidden border border-solid border-transparent px-4 py-[0.6rem] text-start text-[.75rem] text-ellipsis whitespace-nowrap !text-[#959ca9]"
+                            >
+                              {t('contact.form.name')} *
+                            </label>
+                            <div className="valid-feedback"> Looks good!</div>
+                            <div className="invalid-feedback"> Please enter your name.</div>
+                          </div>
+                        </div>
+                        <div className="w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-6/12 lg:w-6/12 xl:w-6/12">
+                          <div className="form-floating relative !mb-4">
+                            <input
+                              id="form_email"
+                              type="email"
+                              name="email"
+                              className="form-control relative m-0 block h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] w-full rounded-[0.4rem] border-0 border-solid border-[rgba(8,60,130,0.07)] bg-[rgba(255,255,255,.7)] bg-clip-padding p-[.6rem_1rem] !pr-9 text-[.75rem] !leading-[1.25] font-medium !text-[#60697b] shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] transition-[border-color] duration-[0.15s] ease-in-out placeholder:!text-[#959ca9] placeholder:opacity-100 focus:!border-0 focus:bg-[rgba(255,255,255,.7)] focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus-visible:!border-0"
+                              placeholder=""
+                              required
+                            />
+                            <label
+                              htmlFor="form_email"
+                              className="font-Manrope pointer-events-none !absolute top-0 left-0 !z-[2] !mb-2 !inline-block h-full origin-[0_0] overflow-hidden border border-solid border-transparent px-4 py-[0.6rem] text-start text-[.75rem] text-ellipsis whitespace-nowrap !text-[#959ca9]"
+                            >
+                              {t('contact.form.email')} *
+                            </label>
+                            <div className="valid-feedback"> Looks good!</div>
+                            <div className="invalid-feedback">
+                              {' '}
+                              Please provide a valid email address.
+                            </div>
+                          </div>
+                        </div>
+                        <div className="w-full max-w-full flex-[0_0_auto] !px-[15px]">
+                          <div className="form-floating relative !mb-4">
+                            <textarea
+                              id="form_message"
+                              name="message"
+                              className="form-control relative m-0 block h-[150px] h-[calc(2.5rem_+_2px)] min-h-[calc(2.5rem_+_2px)] w-full rounded-[0.4rem] border-0 border-solid border-[rgba(8,60,130,0.07)] bg-[rgba(255,255,255,.7)] bg-clip-padding p-[.6rem_1rem] !pr-9 text-[.75rem] !leading-[1.25] font-medium !text-[#60697b] shadow-[0_0_1.25rem_rgba(30,34,40,0.04)] transition-[border-color] duration-[0.15s] ease-in-out placeholder:!text-[#959ca9] placeholder:opacity-100 focus:!border-0 focus:bg-[rgba(255,255,255,.7)] focus:shadow-[0_0_1.25rem_rgba(30,34,40,0.04),unset] focus-visible:!border-0"
+                              placeholder=""
+                              required
+                            ></textarea>
+                            <label
+                              htmlFor="form_message"
+                              className="font-Manrope pointer-events-none !absolute top-0 left-0 !z-[2] !mb-2 !inline-block h-full origin-[0_0] overflow-hidden border border-solid border-transparent px-4 py-[0.6rem] text-start text-[.75rem] text-ellipsis whitespace-nowrap !text-[#959ca9]"
+                            >
+                              {t('contact.form.message')} *
+                            </label>
+                            <div className="valid-feedback"> Looks good!</div>
+                            <div className="invalid-feedback"> Please enter your messsage.</div>
+                          </div>
+                        </div>
+                        <div className="w-full max-w-full flex-[0_0_auto] !px-[15px] !text-center">
+                          <input
+                            type="submit"
+                            className="btn btn-yellow btn-send !rounded-[50rem] border-[#fab758] !bg-[#fab758] !text-white hover:!border-[#fab758] hover:bg-[#fab758] hover:text-white active:border-[#fab758] active:bg-[#fab758] active:text-white disabled:border-[#fab758] disabled:bg-[#fab758] disabled:text-white"
+                            value={t('contact.form.button')}
+                          />
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

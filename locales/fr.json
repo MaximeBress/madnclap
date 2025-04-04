@@ -6,12 +6,12 @@
     "contact": "Contact"
   },
   "Homepage": {
-    "title": "Vous souhaitez réaliser un film ?",
+    "title": "Vous souhaitez réaliser un film ?",
     "Hero" : {
-      "title": "Nous vous accompagnons dans la création de votre contenu audiovisuel avec",
+      "title": "Nous vous accompagnons dans la création de votre contenu audiovisuel",
       "subtitle1": "Technicité",
       "subtitle2": "Style",
-      "subtitle3": "Et maîtrise"
+      "subtitle3": "Maîtrise"
     },
     "work": {
       "from": "Du contenu créatif",
@@ -19,10 +19,12 @@
     },
     "partners": "Ils nous font confiance",
     "about": {
-      "subtitle1": "On est curieux",
+      "title": "Qui sommes-nous ?",
+      "subtitle1": "Curieux",
       "subtitle2": "Créatifs",
-      "subtitle3": "Et aventuriers",
-      "text": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.\n  Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion."
+      "subtitle3": "Aventuriers",
+      "text1": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.",
+      "text2": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion."
     },
     "contact": {
       "title": "On est tout près, Viens nous saluer !",
