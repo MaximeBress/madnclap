@@ -8,7 +8,7 @@ import logo from '../../public/img/svg/logo.svg';
 import { useParams } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVimeo, faVimeoV } from '@fortawesome/free-brands-svg-icons';
+import { faVimeoV } from '@fortawesome/free-brands-svg-icons';
 
 export default function Navbar() {
   const t = useTranslations('Menu');

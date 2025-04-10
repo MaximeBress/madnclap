@@ -58,9 +58,13 @@
         "title": "Article 5 : Propriété intellectuelle\n",
         "text": "Toute utilisation, reproduction, diffusion, commercialisation, modification de toute ou partie du site madnclap.com, sans autorisation de l’Editeur est prohibée et pourra entraînée des actions et poursuites judiciaires telles que notamment prévues par le Code de la propriété intellectuelle et le Code civil."
       }
-    },
-    "Footer": {
-      "legalNotice": "Mentions legales"
     }
+  },
+  "Footer": {
+    "text": "Mad'n'Clap est une agence créative de production audiovisuelle.",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "rights": "Tous droits réservés",
+    "legalNotice": "Mentions legales"
   }
 }
