@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export const Partners = () => {
   return (
-    <div id="achievements" className="py-5">
+    <div className="py-5">
       <div className="mx-0 !mt-[-40px] flex flex-wrap items-center md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px]">
         <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] px-[45px] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
           <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
