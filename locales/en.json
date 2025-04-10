@@ -1,8 +1,8 @@
 {
   "Menu": {
     "home": "Home",
-    "about": "Work",
-    "achievements": "About",
+    "about": "About",
+    "achievements": "Work",
     "contact": "Contact"
   },
   "Homepage": {
@@ -35,6 +35,10 @@
       "text1": "We are expert in executive production, audiovisual techniques and post-production.",
       "text2": "We are involved in many formats, and handle every step of the production with transparency, fun and precision.",
       "button": "Contact us"
+    },
+    "achievements": {
+      "title": "Our Achievements",
+      "subtitle": "Discover our passionately crafted projects"
     },
     "contact": {
       "title": "We’re near by, Come say hi !",

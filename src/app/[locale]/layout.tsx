@@ -1,5 +1,7 @@
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
+import Script from 'next/script';
+import { ToastContainer } from 'react-toastify';
 
 import '@/app/css/plugins.css';
 import '@/app/css/globals.css';
@@ -8,8 +10,6 @@ import '@/app/css/urbanist.css';
 import { Footer } from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { routing } from '@/i18n/routing';
-import Script from 'next/script';
-import { ToastContainer } from 'react-toastify';
 
 export default async function RootLayout({
   children,

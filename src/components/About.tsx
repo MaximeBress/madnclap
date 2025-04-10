@@ -1,5 +1,6 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { Partners } from '@/components/Partners';
 
 export const About = () => {
   const t = useTranslations('Homepage');
@@ -41,6 +42,8 @@ export const About = () => {
           </h2>
         </div>
       </div>
+      <Partners />
+
       <div className="wrapper bg-[rgba(246,247,249,1)]">
         <div className="container py-[4.5rem] md:!py-24 lg:!py-24 xl:!py-24">
           <div className="mx-[-15px] !mt-10 flex flex-wrap md:mx-[-20px] md:!mt-16 lg:mx-[-20px] lg:!mt-16 xl:mx-[-35px] xl:!mt-16">

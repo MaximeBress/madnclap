@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 
 import { Home as HomeSection } from '@/components/Home';
 import { About } from '@/components/About';
-import { Partners } from '@/components/Partners';
 import { Contact } from '@/components/ContactForm';
+import { Achievements } from '@/components/Achievements';
 
 export const metadata: Metadata = {
   title: "Mad'nClap - Création de Contenu Multimédia de Haute Qualité",
@@ -15,7 +15,7 @@ export default function Home() {
     <div className="shrink-0 grow">
       <HomeSection />
       <About />
-      <Partners />
+      <Achievements />
       <Contact />
     </div>
   );
