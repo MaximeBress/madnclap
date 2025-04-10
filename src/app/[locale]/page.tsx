@@ -11,7 +11,10 @@ export default function Home() {
 
   return (
     <div className="shrink-0 grow">
-      <section className="section-frame br-fix overflow-hidden md:mx-6 md:rounded-[1rem] lg:mx-6 lg:rounded-[1rem] xl:mx-6 xl:rounded-[1rem]">
+      <section
+        id="home"
+        className="section-frame br-fix overflow-hidden md:mx-6 md:rounded-[1rem] lg:mx-6 lg:rounded-[1rem] xl:mx-6 xl:rounded-[1rem]"
+      >
         <div className="wrapper image-wrapper bg-image bg-overlay bg-overlay-500 relative z-0 bg-[url(/img/cocon_showreel_image.png)] bg-cover bg-scroll bg-[center_center] bg-no-repeat before:absolute before:top-0 before:left-0 before:z-[1] before:block before:h-full before:w-full before:bg-[rgba(30,34,40,.5)] before:content-['']">
           <div className="container pt-32 pb-28 !text-center lg:pt-[12.5rem] lg:pb-36 xl:pt-[12.5rem] xl:pb-36">
             <div className="mx-[-15px] flex flex-wrap">
@@ -113,7 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="services">
+      <section id="about">
         <div className="wrapper bg-[rgba(246,247,249,1)]">
           <div className="container py-[5rem] md:!py-[7rem] lg:!py-[7rem] xl:!py-[7rem]">
             <div className="mx-[-15px] !mt-[-50px] flex flex-wrap items-center lg:mx-0 xl:mx-0">
@@ -181,7 +184,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="py-5">
+      <div id="achievements" className="py-5">
         <div className="mx-0 !mt-[-40px] flex flex-wrap items-center md:mx-[-20px] lg:mx-[-20px] xl:mx-[-35px]">
           <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] md:w-1/9 md:!px-[20px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">
             <figure className="xxl:!px-4 px-5 md:!px-0 lg:!px-2 xl:!px-3">
@@ -294,7 +297,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section id="pricing">
+      <section id="contact">
         <div className="wrapper image-wrapper bg-image bg-overlay relative z-0 bg-[url(/img/telephone.png)] bg-cover bg-fixed bg-[center_center] bg-no-repeat before:absolute before:top-0 before:left-0 before:z-[1] before:block before:h-full before:w-full before:bg-[rgba(30,34,40,.5)] before:content-['']">
           <div className="container py-[5rem] md:!py-[7rem] lg:!py-[7rem] xl:!py-[7rem]">
             <div className="mx-[-15px] flex flex-wrap">
