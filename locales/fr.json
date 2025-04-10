@@ -7,24 +7,34 @@
   },
   "Homepage": {
     "title": "Vous souhaitez réaliser un film ?",
+    "subtitle": "Salut et bienvenue sur Mad’n’Clap !",
     "Hero" : {
-      "title": "Nous vous accompagnons dans la création de votre contenu audiovisuel",
-      "subtitle1": "Technicité",
-      "subtitle2": "Style",
-      "subtitle3": "Maîtrise"
+      "title": "Nous vous accompagnons dans la création de votre contenu audiovisuel"
     },
     "work": {
-      "from": "Du contenu créatif",
-      "to": "Au film institutionnel"
+      "title": "Du contenu créatif au film institutionnel",
+      "text": "Mad'n'Clap travaille avec un réseau de collaborateurs compétents et prend en charge de A à Z la création de votre contenu multimédia.",
+      "technicity": {
+        "title": "Technique",
+        "text": "Notre expertise technique garantit des résultats précis et professionnels. Chaque projet est réalisé avec une rigueur et une précision qui reflètent notre engagement envers l'excellence."
+      },
+      "style": {
+        "title": "Style",
+        "text": "Nous apportons une touche unique et créative à chaque projet. Notre style distinctif se caractérise par une esthétique moderne et innovante, toujours en phase avec les tendances actuelles."
+      },
+      "leadership": {
+        "title": "Maîtrise",
+        "text": "Avec une maîtrise parfaite des outils et des techniques, nous assurons une exécution impeccable de vos projets. Notre savoir-faire nous permet de surpasser les attentes et de livrer des résultats exceptionnels."
+      }
     },
+    "accompanied": "Nous vous accompagnons dans la création de votre contenu audiovisuel",
     "partners": "Ils nous font confiance",
     "about": {
       "title": "Qui sommes-nous ?",
-      "subtitle1": "Curieux",
-      "subtitle2": "Créatifs",
-      "subtitle3": "Aventuriers",
+      "subtitle": "Mad'n'Clap est une agence créative de production audiovisuelle.",
       "text1": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.",
-      "text2": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion."
+      "text2": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion.",
+      "button": "Contacter nous"
     },
     "contact": {
       "title": "On est tout près, Viens nous saluer !",

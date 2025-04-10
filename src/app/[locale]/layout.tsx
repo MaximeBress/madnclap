@@ -26,10 +26,8 @@ export default async function RootLayout({
     <html lang={locale}>
       <body className="onepage">
         <NextIntlClientProvider>
-          <div className="shrink-0 grow">
-            <Navbar />
-            {children}
-          </div>
+          <Navbar />
+          {children}
           <Footer />
         </NextIntlClientProvider>
         <Script src="js/plugins.js" />

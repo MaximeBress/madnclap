@@ -60,7 +60,9 @@ export const Footer = () => {
         </div>
         <hr className="!mt-[3rem] !mb-7 md:!mt-[3.5rem] lg:!mt-[3.5rem] xl:!mt-[3.5rem]" />
         <div className="items-center justify-between md:!flex lg:!flex xl:!flex">
-          <p className="!mb-2 lg:!mb-0 xl:!mb-0">© 2024 MadNClap. {t('rights')}</p>
+          <p className="!mb-2 lg:!mb-0 xl:!mb-0">
+            © {new Date().getFullYear()} MadNClap. {t('rights')}
+          </p>
           <nav className="nav social social-muted !mb-0 md:!text-right lg:!text-right xl:!text-right">
             <a
               className="m-[0_0_0_.7rem] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] max-md:m-[0_.7rem_0_0]"
