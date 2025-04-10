@@ -39,10 +39,21 @@
     "contact": {
       "title": "We’re near by, Come say hi !",
       "form": {
-        "name": "Name",
-        "email": "Email address",
-        "message": "Your project",
-        "button": "Send us"
+        "name": {
+          "label": "Your name",
+          "required": "Your name is required"
+        },
+        "email": {
+          "label": "Email adress",
+          "email": "Your email is invalid",
+          "required": "Your email is required"
+        },
+        "message": {
+          "label": "Your project",
+          "min": "Your message is too short",
+          "required": "Your message is required"
+        },
+        "button": "Send"
       }
     },
     "legalNotice": {

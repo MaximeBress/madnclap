@@ -37,11 +37,22 @@
       "button": "Contacter nous"
     },
     "contact": {
-      "title": "On est tout près, Viens nous saluer !",
+      "title": "On est tout près, Venez nous saluer !",
       "form": {
-        "name": "Votre nom",
-        "email": "Adresse mail",
-        "message": "Votre projet",
+        "name": {
+          "label": "Votre nom",
+          "required": "Votre nom est requis"
+        },
+        "email": {
+          "label": "Adresse mail",
+          "email": "Adresse email invalide",
+          "required": "Votre adresse email est requise"
+        },
+        "message": {
+          "label": "Votre projet",
+          "min": "Votre message est trop court",
+          "required": "Vous devez décrire votre projet"
+        },
         "button": "Envoyer"
       }
     },
