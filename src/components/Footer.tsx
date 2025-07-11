@@ -51,7 +51,7 @@ export const Footer = () => {
                 <div className="!justify-start !self-start">
                   <h5 className="!mb-1">{t('address')}</h5>
                   <address className="!mb-4 !leading-[inherit] not-italic">
-                    Moonshine St. 14/05 Light City, London, United Kingdom
+                    Paris, Marseille
                   </address>
                 </div>
               </div>

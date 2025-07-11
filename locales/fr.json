@@ -6,9 +6,9 @@
     "contact": "Contact"
   },
   "Homepage": {
-    "title": "Vous souhaitez réaliser un film ?",
+    "title": "Nous vous accompagnons dans vos productions audiovisuelles",
     "subtitle": "Salut et bienvenue sur Mad’n’Clap !",
-    "Hero" : {
+    "Hero": {
       "title": "Nous vous accompagnons dans la création de votre contenu audiovisuel"
     },
     "work": {
@@ -27,11 +27,11 @@
         "text": "Avec une maîtrise parfaite des outils et des techniques, nous assurons une exécution impeccable de vos projets. Notre savoir-faire nous permet de surpasser les attentes et de livrer des résultats exceptionnels."
       }
     },
-    "accompanied": "Nous vous accompagnons dans la création de votre contenu audiovisuel",
+    "accompanied": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion.",
     "partners": "Ils nous font confiance",
     "about": {
-      "title": "Qui sommes-nous ?",
-      "subtitle": "Mad'n'Clap est une agence créative de production audiovisuelle.",
+      "title": "Du contenu créatif au film corporate",
+      "subtitle": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.",
       "text1": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.",
       "text2": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion.",
       "button": "Contacter nous"
@@ -41,7 +41,7 @@
       "subtitle": "Découvrez nos projets réalisés avec passion et expertise"
     },
     "contact": {
-      "title": "On est tout près, Venez nous saluer !",
+      "title": "Contactez nous",
       "form": {
         "name": {
           "label": "Votre nom",

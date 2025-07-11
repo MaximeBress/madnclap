@@ -15,15 +15,12 @@ export const Home = () => {
         <div className="container pt-32 pb-28 !text-center lg:pt-[12.5rem] lg:pb-36 xl:pt-[12.5rem] xl:pb-36">
           <div className="mx-[-15px] flex flex-wrap">
             <div
-              className="xxl:w-6/12 !mx-auto w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-9/12 lg:w-8/12 xl:w-7/12"
+              className="!mx-auto w-full max-w-full flex-[0_0_auto] !px-[15px] md:w-9/12 lg:w-8/12"
               data-cues="zoomIn"
               data-group="page-title"
               data-interval="-200"
               data-delay="500"
             >
-              <h2 className="h6 !mb-5 !tracking-[0.05rem] !text-white uppercase">
-                {t('subtitle')}
-              </h2>
               <h3 className="!mb-7 !text-[calc(1.395rem_+_1.74vw)] !leading-[1.15] !text-white xl:!text-[2.7rem]">
                 {t('title')}
               </h3>

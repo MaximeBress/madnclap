@@ -69,12 +69,9 @@ export const Contact = () => {
             <div className="!mx-auto w-full max-w-full flex-[0_0_auto] !px-[15px] xl:w-9/12">
               <div className="card border-0 !bg-[rgba(255,255,255,.9)]">
                 <div className="card-body p-[40px] lg:!px-24 lg:!py-16 xl:!px-24 xl:!py-16">
-                  <h2 className="!mb-3 !text-center !text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold xl:!text-[1.7rem]">
-                    Contact
-                  </h2>
-                  <p className="lead !mb-10 !text-[1.1rem] !leading-[1.55] font-medium">
+                  <h2 className="!mb-10 !text-center !text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold xl:!text-[1.7rem]">
                     {t('contact.title')}
-                  </p>
+                  </h2>
                   <form className="contact-form needs-validation" onSubmit={handleSubmit(onSubmit)}>
                     <div className="messages"></div>
                     <div className="mx-[-10px] flex flex-wrap">

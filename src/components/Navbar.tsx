@@ -3,164 +3,240 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useParams, usePathname } from 'next/navigation';
+import { useState } from 'react';
+import {
+  BiChevronDown,
+  BiLogoFacebook,
+  BiLogoInstagram,
+  BiLogoVimeo,
+  BiLogoYoutube,
+  BiMenu,
+  BiX,
+} from 'react-icons/bi';
 
-import logo from '../../public/img/svg/logo.svg';
-import { useParams } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVimeoV } from '@fortawesome/free-brands-svg-icons';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
+import logo from '../../public/img/svg/logo.svg';
 
 export default function Navbar() {
   const t = useTranslations('Menu');
   const { locale } = useParams();
 
+  const [isMobileMenuOpen, setIsMobileMenuOpenVisible] = useState(false);
+  const pathname = usePathname();
+
+  const [positionLanguage, setPosition] = useState('fr');
+
   return (
-    <header className="wrapper relative bg-[rgba(246,247,249,1)]">
-      <nav className="navbar navbar-expand-lg extended extended-alt navbar-light !bg-[#ffffff]">
-        <div className="container lg:!flex-col xl:!flex-col">
-          <div className="topbar flex flex-row items-center lg:!justify-center xl:!justify-center">
-            <div className="navbar-brand">
-              <Link href="/">
-                <Image priority src={logo} width={70} height={70} alt="Logo MadNClap" />
-              </Link>
-            </div>
+    <nav className="fixed z-50 w-full transition-transform duration-300">
+      <div className="flex flex-col items-end">
+        <div className="mx-auto flex h-20 w-full justify-between bg-white px-4 shadow-md sm:px-6 lg:border-0 lg:px-8">
+          <Link href="/" className="cursor-pointer p-2">
+            <Image priority src={logo} width={50} height={50} alt="Logo MadNClap" />
+          </Link>
+          <div className="hidden items-center gap-8 lg:flex">
+            <Link
+              href="#home"
+              className={`text-md hover:text-primary-400 cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 ${pathname === '#home' ? 'text-primary-500' : 'text-gray-600'}`}
+            >
+              {t('home')}
+            </Link>
+            <Link
+              href="#about"
+              className={`text-md hover:text-primary-400 cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 ${pathname === '#about' ? 'text-primary-500' : 'text-gray-600'}`}
+            >
+              {t('about')}
+            </Link>
+            <Link
+              href="#achievements"
+              className={`text-md hover:text-primary-400 cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 ${pathname === '#achievements' ? 'text-primary-500' : 'text-gray-600'}`}
+            >
+              {t('achievements')}
+            </Link>
+            <Link
+              href="#contact"
+              className={`text-md hover:text-primary-400 cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 ${pathname === '#contact' ? 'text-primary-500' : 'text-gray-600'}`}
+            >
+              Contact
+            </Link>
           </div>
-          <div className="navbar-collapse-wrapper flex flex-row items-center justify-between bg-[rgba(255,255,255)] opacity-100">
-            <div className="navbar-other hidden w-full lg:block xl:block">
-              <nav className="nav social social-muted">
-                <a
-                  className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem]"
-                  href="https://www.youtube.com/channel/UCPDzgHHZZ7VZ8T61GrLcrdA"
-                >
-                  <i className="uil uil-youtube text-[1rem] !text-[#FF0033] before:content-['\edb5']"></i>
-                </a>
-                <a
-                  className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem]"
-                  href="https://www.facebook.com/Madnclap/"
-                >
-                  <i className="uil uil-facebook-f text-[1rem] !text-[#4470cf] before:content-['\eae2']"></i>
-                </a>
-                <a
-                  className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem]"
-                  href="https://www.instagram.com/madnclap/"
-                >
-                  <i className="uil uil-instagram text-[1rem] !text-[#d53581] before:content-['\eb9c']"></i>
-                </a>
-                <a
-                  className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem]"
-                  href="https://vimeo.com/user59126415"
-                >
-                  <FontAwesomeIcon icon={faVimeoV} />
-                </a>
-              </nav>
-            </div>
-            <div className="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
-              <div className="offcanvas-header flex flex-row items-center justify-between p-6 lg:!hidden xl:!hidden">
-                <h3 className="!mb-0 !text-[calc(1.275rem_+_0.3vw)] !text-white xl:!text-[1.5rem]">
-                  Mad’n’Clap
-                </h3>
-                <button
-                  type="button"
-                  className="btn-close btn-close-white before:font-Unicons m-0 !mr-[-0.75rem] border-0 bg-inherit p-0 leading-none !text-[#343f52] transition-all duration-[0.2s] ease-in-out before:m-0 before:!flex before:h-[1.8rem] before:w-[1.8rem] before:items-center before:justify-center before:rounded-[100%] before:bg-[rgba(255,255,255,.08)] before:p-0 before:text-[1.05rem] before:leading-[1.8rem] before:text-white before:shadow-none before:transition-[background] before:duration-[0.2s] before:ease-in-out before:content-['\ed3b'] hover:no-underline hover:before:bg-[rgba(0,0,0,.11)] motion-reduce:transition-none"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div className="offcanvas-body flex !h-full flex-col">
-                <ul className="navbar-nav">
-                  <li className="nav-item">
-                    <Link href="#home" className="nav-link scroll active hover:!text-[#fab758]">
-                      {t('home')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link href="#about" className="nav-link scroll hover:!text-[#fab758]">
-                      {t('about')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link href="#achievements" className="nav-link scroll hover:!text-[#fab758]">
-                      {t('achievements')}
-                    </Link>
-                  </li>
-                  <li className="nav-item">
-                    <Link href="#contact" className="nav-link scroll hover:!text-[#fab758]">
-                      {t('contact')}
-                    </Link>
-                  </li>
-                </ul>
-                <div className="offcanvas-footer lg:!hidden xl:!hidden">
-                  <div>
-                    <a href="mailto:first.last@email.com" className="link-inverse">
-                      contact@madnclap.com
-                    </a>
-                    <br /> +33 6 86 12 32 51 <br />
-                    <nav className="nav social social-white !mt-4">
-                      <a
-                        className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] !text-[#cacaca] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] motion-reduce:transition-none"
-                        href="https://www.youtube.com/channel/UCPDzgHHZZ7VZ8T61GrLcrdA"
+
+          <div className="hidden items-center gap-4 lg:flex">
+            <Link
+              href="https://www.youtube.com/channel/UCPDzgHHZZ7VZ8T61GrLcrdA"
+              className="font-medium text-[#FF0033] uppercase hover:text-[#d7002b]"
+              target="_blank"
+            >
+              <BiLogoYoutube className="text-xl" />
+            </Link>
+            <Link
+              href="https://www.facebook.com/Madnclap/"
+              className="font-medium text-[#4470cf] uppercase hover:text-[#76a7e4]"
+              target="_blank"
+            >
+              <BiLogoFacebook className="text-xl" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/madnclap/"
+              className="font-medium text-[#d53581] uppercase hover:text-[#b71f63]"
+              target="_blank"
+            >
+              <BiLogoInstagram className="text-xl" />
+            </Link>
+            <Link
+              href="https://vimeo.com/user59126415"
+              className="font-medium text-[#17d5ff] uppercase hover:text-[#00b7e5]"
+              target="_blank"
+            >
+              <BiLogoVimeo className="text-xl" />
+            </Link>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="cursor-pointer uppercase">
+                  {locale}
+                  <BiChevronDown />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuRadioGroup value={positionLanguage} onValueChange={setPosition}>
+                  {routing.locales.map((localeAvailable, index) => (
+                    <DropdownMenuRadioItem key={index} value={localeAvailable}>
+                      <Link
+                        href={`/${localeAvailable}`}
+                        className="dropdown-item uppercase hover:bg-[inherit] hover:!text-[#3f78e0]"
                       >
-                        <i className="uil uil-youtube text-[1rem] !text-white before:content-['\edb5']"></i>
-                      </a>
-                      <a
-                        className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] !text-[#cacaca] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] motion-reduce:transition-none"
-                        href="https://www.facebook.com/Madnclap/"
-                      >
-                        <i className="uil uil-facebook-f text-[1rem] !text-white before:content-['\eae2']"></i>
-                      </a>
-                      <a
-                        className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] !text-[#cacaca] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] motion-reduce:transition-none"
-                        href="https://www.instagram.com/madnclap/"
-                      >
-                        <i className="uil uil-instagram text-[1rem] !text-white before:content-['\eb9c']"></i>
-                      </a>
-                      <a
-                        className="m-[0_.7rem_0_0] translate-y-0 text-[1rem] !text-[#cacaca] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] motion-reduce:transition-none"
-                        href="https://vimeo.com/user59126415"
-                      >
-                        <FontAwesomeIcon icon={faVimeoV} />
-                      </a>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="navbar-other flex w-full">
-              <ul className="navbar-nav !ml-auto !flex-row !items-center">
-                <li className="nav-item dropdown language-select group uppercase">
-                  <a
-                    className="nav-link dropdown-item dropdown-toggle hover:!text-[#fab758] focus:!text-[#fab758]"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    {locale}
-                  </a>
-                  <ul className="dropdown-menu group-hover:shadow-[0_0.25rem_0.75rem_rgba(30,34,40,0.15)]">
-                    {routing.locales.map((localeAvailable) => (
-                      <li key={localeAvailable} className="nav-item">
-                        <Link
-                          href={`/${localeAvailable}`}
-                          className="dropdown-item hover:bg-[inherit] hover:!text-[#3f78e0]"
-                        >
-                          {localeAvailable}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-                <li className="nav-item lg:!hidden xl:!hidden">
-                  <button className="hamburger offcanvas-nav-btn">
-                    <span></span>
-                  </button>
-                </li>
-              </ul>
-            </div>
+                        {localeAvailable}
+                      </Link>
+                    </DropdownMenuRadioItem>
+                  ))}
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
+
+          <div className="flex items-center lg:hidden">
+            <button
+              onClick={() => setIsMobileMenuOpenVisible(!isMobileMenuOpen)}
+              className="text-grey-400 hover:bg-grey-100 hover:text-grey-400 focus:ring-grey-300 inline-flex items-center justify-center rounded-md p-2"
+            >
+              {!isMobileMenuOpen ? <BiMenu className="text-3xl" /> : <BiX className="text-3xl" />}
+            </button>
           </div>
         </div>
-      </nav>
-    </header>
+
+        <div
+          className={`flex w-1/2 flex-col gap-4 rounded-bl-md px-8 transition-all duration-300 ease-in-out lg:hidden ${
+            isMobileMenuOpen ? 'bg-white/80' : 'max-h-0 overflow-hidden opacity-0'
+          }`}
+        >
+          <div className="flex flex-col items-end gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="w-fit cursor-pointer !p-0 uppercase">
+                  {locale}
+                  <BiChevronDown />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuRadioGroup value={positionLanguage} onValueChange={setPosition}>
+                  {routing.locales.map((localeAvailable, index) => (
+                    <DropdownMenuRadioItem key={index} value={localeAvailable}>
+                      <Link
+                        href={`/${localeAvailable}`}
+                        className="dropdown-item uppercase hover:bg-[inherit] hover:!text-[#3f78e0]"
+                      >
+                        {localeAvailable}
+                      </Link>
+                    </DropdownMenuRadioItem>
+                  ))}
+                </DropdownMenuRadioGroup>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Link
+              href="#home"
+              className={`block rounded-md text-base font-medium ${
+                pathname === '#home'
+                  ? 'text-primary-400 bg-primary-50'
+                  : 'hover:bg-primary-50 text-gray-600 hover:text-gray-600'
+              }`}
+              onClick={() => setIsMobileMenuOpenVisible(false)}
+            >
+              {t('home')}
+            </Link>
+            <Link
+              href="#about"
+              className={`block rounded-md text-base font-medium ${
+                pathname === '#home'
+                  ? 'text-primary-400 bg-primary-50'
+                  : 'hover:bg-primary-50 text-gray-600 hover:text-gray-600'
+              }`}
+              onClick={() => setIsMobileMenuOpenVisible(false)}
+            >
+              {t('about')}
+            </Link>
+            <Link
+              href="#achievements"
+              className={`block rounded-md text-base font-medium ${
+                pathname === '#home'
+                  ? 'text-primary-400 bg-primary-50'
+                  : 'hover:bg-primary-50 text-gray-600 hover:text-gray-600'
+              }`}
+              onClick={() => setIsMobileMenuOpenVisible(false)}
+            >
+              {t('achievements')}
+            </Link>
+            <Link
+              href="#contact"
+              className={`block rounded-md text-base font-medium ${
+                pathname === '#home'
+                  ? 'text-primary-400 bg-primary-50'
+                  : 'hover:bg-primary-50 text-gray-600 hover:text-gray-600'
+              }`}
+              onClick={() => setIsMobileMenuOpenVisible(false)}
+            >
+              Contact
+            </Link>
+          </div>
+          <div className="flex justify-end gap-4 py-4">
+            <Link
+              href="https://www.youtube.com/channel/UCPDzgHHZZ7VZ8T61GrLcrdA"
+              className="font-medium text-[#FF0033] uppercase hover:text-[#d7002b]"
+              target="_blank"
+            >
+              <BiLogoYoutube className="text-xl" />
+            </Link>
+            <Link
+              href="https://www.facebook.com/Madnclap/"
+              className="font-medium text-[#4470cf] uppercase hover:text-[#76a7e4]"
+              target="_blank"
+            >
+              <BiLogoFacebook className="text-xl" />
+            </Link>
+            <Link
+              href="https://www.instagram.com/madnclap/"
+              className="font-medium text-[#d53581] uppercase hover:text-[#b71f63]"
+              target="_blank"
+            >
+              <BiLogoInstagram className="text-xl" />
+            </Link>
+            <Link
+              href="https://vimeo.com/user59126415"
+              className="font-medium text-[#17d5ff] uppercase hover:text-[#00b7e5]"
+              target="_blank"
+            >
+              <BiLogoVimeo className="text-xl" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }

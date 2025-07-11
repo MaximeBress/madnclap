@@ -1,9 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
-import { Home as HomeSection } from '@/components/Home';
-import { About } from '@/components/About';
-import { Contact } from '@/components/ContactForm';
-import { Achievements } from '@/components/Achievements';
+import { Home as HomeSection } from "@/components/Home";
+import { About } from "@/components/About";
+import { Contact } from "@/components/ContactForm";
+import { Achievements } from "@/components/Achievements";
+import { Partners } from "@/components/Partners";
 
 export const metadata: Metadata = {
   title: "Mad'nClap - Création de Contenu Multimédia de Haute Qualité",
@@ -16,6 +17,7 @@ export default function Home() {
       <HomeSection />
       <About />
       <Achievements />
+      <Partners />
       <Contact />
     </div>
   );
