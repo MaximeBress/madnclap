@@ -8,7 +8,7 @@
   "Homepage": {
     "title": "Need an incredible movie ?",
     "subtitle": "Hello and welcome to Mad’n’Clap !",
-    "Hero" : {
+    "Hero": {
       "title": "Mad’n’Clap provides solutions to help you create your multimedia content with"
     },
     "work": {
@@ -38,7 +38,9 @@
     },
     "achievements": {
       "title": "Our Achievements",
-      "subtitle": "Discover our passionately crafted projects"
+      "subtitle": "Discover our passionately crafted projects",
+      "showMore": "Show more",
+      "showLess": "Show less"
     },
     "contact": {
       "title": "We’re near by, Come say hi !",

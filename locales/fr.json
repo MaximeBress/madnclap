@@ -38,7 +38,9 @@
     },
     "achievements": {
       "title": "Nos Réalisations",
-      "subtitle": "Découvrez nos projets réalisés avec passion et expertise"
+      "subtitle": "Découvrez nos projets réalisés avec passion et expertise",
+      "showMore": "Voir plus",
+      "showLess": "Voir moins"
     },
     "contact": {
       "title": "Contactez nous",
