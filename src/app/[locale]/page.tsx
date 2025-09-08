@@ -7,6 +7,7 @@ import { Achievements } from '@/components/Achievements';
 import { Partners } from '@/components/Partners';
 import axios from 'axios';
 import { Suspense } from 'react';
+import { Loader } from '@/components/Loader';
 import { Video } from '@/typing';
 
 export const metadata: Metadata = {
@@ -37,7 +38,7 @@ export default function Home() {
         <div className="shrink-0 grow">
             <HomeSection />
             <About />
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader label="Chargement de nos réalisations" />}>
                 <Achievements videos={videos} />
             </Suspense>
             <Partners />

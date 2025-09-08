@@ -5,8 +5,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from '@/components/ui/carousel';
 
 export const Partners = () => {
@@ -19,13 +17,15 @@ export const Partners = () => {
       </h2>
       <div className="py-5">
         <Carousel
-          className="w-full max-w-xl lg:hidden"
+          className="w-full lg:max-w-xl lg:hidden"
           opts={{
             align: 'start',
             loop: true,
           }}
+          autoPlay
+          autoPlayInterval={2000}
         >
-          <CarouselContent className="-ml-1">
+          <CarouselContent>
             <CarouselItem className="basis-1/4">
               <figure className="px-4">
                 <Image
@@ -135,8 +135,6 @@ export const Partners = () => {
               </figure>
             </CarouselItem>
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
         </Carousel>
         <div className="mx-0 !mt-[-40px] hidden flex-wrap items-center md:mx-[-20px] lg:mx-[-20px] lg:flex xl:mx-[-35px]">
           <div className="!mt-[40px] w-3/9 max-w-full flex-[0_0_auto] px-[45px] lg:w-1/9 lg:!px-[20px] xl:w-1/9 xl:!px-[35px]">

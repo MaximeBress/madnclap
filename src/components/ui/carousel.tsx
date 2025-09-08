@@ -19,6 +19,8 @@ type CarouselProps = {
   plugins?: CarouselPlugin
   orientation?: "horizontal" | "vertical"
   setApi?: (api: CarouselApi) => void
+  autoPlay?: boolean
+  autoPlayInterval?: number
 }
 
 type CarouselContextProps = {
@@ -49,6 +51,8 @@ function Carousel({
   plugins,
   className,
   children,
+  autoPlay = false,
+  autoPlayInterval = 2000,
   ...props
 }: React.ComponentProps<"div"> & CarouselProps) {
   const [carouselRef, api] = useEmblaCarousel(
@@ -104,6 +108,24 @@ function Carousel({
     }
   }, [api, onSelect])
 
+  // Autoplay effect
+  React.useEffect(() => {
+    if (!api) return
+    if (!autoPlay) return
+
+    const raf: number | null = null
+    const interval = setInterval(() => {
+      // Prefer scrollNext; if cannot and not looping, do nothing
+      api.scrollNext()
+    }, Math.max(0, autoPlayInterval || 2000))
+
+    // Clear both interval and any pending raf on cleanup
+    return () => {
+      clearInterval(interval)
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [api, autoPlay, autoPlayInterval])
+
   return (
     <CarouselContext.Provider
       value={{
@@ -138,13 +160,13 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       ref={carouselRef}
-      className="overflow-hidden"
+      className="overflow-hidden px-4"
       data-slot="carousel-content"
     >
       <div
         className={cn(
-          "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          "flex items-center",
+          orientation === "horizontal" ? "" : "flex-col",
           className
         )}
         {...props}
@@ -163,7 +185,7 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="carousel-item"
       className={cn(
         "min-w-0 shrink-0 grow-0 basis-full",
-        orientation === "horizontal" ? "pl-4" : "pt-4",
+        orientation === "horizontal" ? "not-first:pl-8 last:pr-8" : "pt-4",
         className
       )}
       {...props}

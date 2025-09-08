@@ -5,45 +5,63 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { Video } from '@/typing';
-import GLightbox from 'glightbox';
 import { clsx } from 'clsx';
 
 export const Achievements = ({ videos }: { videos: Promise<{ data: Video[] }> }) => {
     const t = useTranslations('Homepage');
     const [showMore, setShowMore] = useState(false);
 
-    useEffect(() => {
-        GLightbox({
-            selector: '*[data-glightbox]',
-            touchNavigation: true,
-            loop: false,
-            zoomable: false,
-            autoplayVideos: true,
-            moreLength: 0,
-            plyr: {
-                css: '',
-                js: '',
-                config: {
-                    ratio: '',
-                    fullscreen: {
-                        enabled: false,
-                        iosNative: false,
-                    },
-                    youtube: {
-                        noCookie: true,
-                        rel: 0,
-                        iv_load_policy: 3,
-                    },
-                    vimeo: {
-                        byline: false,
-                        portrait: false,
-                        title: false,
-                        transparent: false,
-                    },
-                },
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let lightbox: any;
+    let mounted = true;
+
+    const init = async () => {
+      const { default: GLightbox } = await import('glightbox');
+      if (!mounted) return;
+
+      lightbox = GLightbox({
+        selector: '*[data-glightbox]',
+        touchNavigation: true,
+        loop: false,
+        zoomable: false,
+        autoplayVideos: true,
+        moreLength: 0,
+        plyr: {
+          css: '',
+          js: '',
+          config: {
+            ratio: '',
+            fullscreen: {
+              enabled: false,
+              iosNative: false,
             },
-        });
-    }, []);
+            youtube: {
+              noCookie: true,
+              rel: 0,
+              iv_load_policy: 3,
+            },
+            vimeo: {
+              byline: false,
+              portrait: false,
+              title: false,
+              transparent: false,
+            },
+          },
+        },
+      });
+    };
+
+    init();
+
+    return () => {
+      mounted = false;
+      if (lightbox?.destroy) {
+        lightbox.destroy();
+      }
+    };
+  }, []);
+
 
     const { data: allVideos } = use(videos);
 
