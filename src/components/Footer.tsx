@@ -2,8 +2,6 @@ import Image from 'next/image';
 
 import logo from '../../public/img/svg/logo.svg';
 import { useTranslations } from 'next-intl';
-import { faVimeoV } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export const Footer = () => {
     const t = useTranslations('Footer');
@@ -30,7 +28,7 @@ export const Footer = () => {
                         <div className="widget">
                             <div className="flex flex-row">
                                 <div>
-                                    <div className="icon !mt-[-0.25rem] !mr-4 !text-[calc(1.265rem_+_0.18vw)] !text-[#FAA5A5] xl:!text-[1.4rem]">
+                                    <div className="icon !mt-[-0.25rem] !mr-4 !text-[calc(1.265rem_+_0.18vw)] xl:!text-[1.4rem]">
                                         <i className="uil uil-phone-volume before:content-['\ec50']"></i>
                                     </div>
                                 </div>
@@ -45,7 +43,7 @@ export const Footer = () => {
                         <div className="widget">
                             <div className="flex flex-row">
                                 <div>
-                                    <div className="icon !mt-[-0.25rem] !mr-4 !text-[calc(1.265rem_+_0.18vw)] !text-[#FAA5A5] xl:!text-[1.4rem]">
+                                    <div className="icon !mt-[-0.25rem] !mr-4 !text-[calc(1.265rem_+_0.18vw)] xl:!text-[1.4rem]">
                                         <i className="uil uil-location-pin-alt before:content-['\ebd8']"></i>
                                     </div>
                                 </div>
@@ -64,32 +62,6 @@ export const Footer = () => {
                     <p className="!mb-2 lg:!mb-0 xl:!mb-0">
                         © {new Date().getFullYear()} MadNClap. {t('rights')}
                     </p>
-                    <nav className="nav social social-muted !mb-0 md:!text-right lg:!text-right xl:!text-right">
-                        <a
-                            className="m-[0_0_0_.7rem] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] max-md:m-[0_.7rem_0_0]"
-                            href="https://www.youtube.com/channel/UCPDzgHHZZ7VZ8T61GrLcrdA"
-                        >
-                            <i className="uil uil-youtube text-[1rem] !text-[#FF0033] before:content-['\edb5']"></i>
-                        </a>
-                        <a
-                            className="m-[0_0_0_.7rem] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] max-md:m-[0_.7rem_0_0]"
-                            href="https://www.facebook.com/Madnclap/"
-                        >
-                            <i className="uil uil-facebook-f text-[1rem] !text-[#4470cf] before:content-['\eae2']"></i>
-                        </a>
-                        <a
-                            className="m-[0_0_0_.7rem] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] max-md:m-[0_.7rem_0_0]"
-                            href="https://www.instagram.com/madnclap/"
-                        >
-                            <i className="uil uil-instagram text-[1rem] !text-[#d53581] before:content-['\eb9c']"></i>
-                        </a>
-                        <a
-                            className="m-[0_0_0_.7rem] translate-y-0 text-[1rem] transition-all duration-[0.2s] ease-in-out hover:translate-y-[-0.15rem] max-md:m-[0_.7rem_0_0]"
-                            href="https://vimeo.com/user59126415"
-                        >
-                            <FontAwesomeIcon icon={faVimeoV} />
-                        </a>
-                    </nav>
                 </div>
             </div>
         </footer>

@@ -36,7 +36,9 @@ export default function Home() {
 
     return (
         <div className="shrink-0 grow">
-            <HomeSection />
+            <Suspense fallback={<Loader label="Chargement de la vidéo" />}>
+              <HomeSection />
+            </Suspense>
             <About />
             <Suspense fallback={<Loader label="Chargement de nos réalisations" />}>
                 <Achievements videos={videos} />

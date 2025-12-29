@@ -2,6 +2,7 @@
 
 import { use, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
 import Image from 'next/image';
 
 import { Video } from '@/typing';
@@ -9,6 +10,7 @@ import { clsx } from 'clsx';
 
 export const Achievements = ({ videos }: { videos: Promise<{ data: Video[] }> }) => {
     const t = useTranslations('Homepage');
+    const { locale } = useParams();
     const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
@@ -21,7 +23,7 @@ export const Achievements = ({ videos }: { videos: Promise<{ data: Video[] }> })
       if (!mounted) return;
 
       lightbox = GLightbox({
-        selector: '*[data-glightbox]',
+        selector: '#achievements [data-glightbox]',
         touchNavigation: true,
         loop: false,
         zoomable: false,
@@ -60,7 +62,7 @@ export const Achievements = ({ videos }: { videos: Promise<{ data: Video[] }> })
         lightbox.destroy();
       }
     };
-  }, []);
+  }, [locale]);
 
 
     const { data: allVideos } = use(videos);
@@ -71,7 +73,7 @@ export const Achievements = ({ videos }: { videos: Promise<{ data: Video[] }> })
                 <div className="container flex flex-col gap-4 py-20 !text-center">
                     <div className="mx-[-15px] flex flex-wrap">
                         <div className="xxl:w-7/12 !mx-auto !mb-8 w-full max-w-full flex-[0_0_auto] !px-[15px] lg:w-10/12 xl:w-8/12">
-                            <h2 className="!mb-3 !text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold xl:!text-[1.7rem]">
+                            <h2 className="!mb-3 uppercase !text-[calc(1.295rem_+_0.54vw)] !leading-[1.25] !font-semibold xl:!text-[1.7rem]">
                                 {t('achievements.title')}
                             </h2>
                         </div>

@@ -6,51 +6,29 @@
     "contact": "Contact"
   },
   "Homepage": {
-    "title": "Need an incredible movie ?",
-    "subtitle": "Hello and welcome to Mad’n’Clap !",
-    "Hero": {
-      "title": "Mad’n’Clap provides solutions to help you create your multimedia content with"
-    },
-    "work": {
-      "title": "From creative content to high quality corporate",
-      "text": "Mad'n'Clap works with a network of skilled collaborators and takes care of the creation of your multimedia content from A to Z.",
-      "technicity": {
-        "title": "Technicity",
-        "text": "Our technical expertise ensures precise and professional results. Each project is executed with rigor and precision, reflecting our commitment to excellence."
-      },
-      "style": {
-        "title": "A special look",
-        "text": "We bring a unique and creative touch to every project. Our distinctive style is characterized by a modern and innovative aesthetic, always in line with current trends."
-      },
-      "leadership": {
-        "title": "And Leadership",
-        "text": "With a perfect mastery of tools and techniques, we ensure flawless execution of your projects. Our expertise allows us to exceed expectations and deliver exceptional results."
-      }
-    },
-    "accompanied": "Mad’n’Clap provides solutions to help you create your multimedia content with",
-    "partners": "They trust us",
+    "title": "We support and create your audiovisual projects",
     "about": {
-      "title": "Who are we ?",
-      "subtitle": "Mad'n'Clap is a creative audiovisual production agency.",
-      "text1": "We are expert in executive production, audiovisual techniques and post-production.",
-      "text2": "We are involved in many formats, and handle every step of the production with transparency, fun and precision.",
-      "button": "Contact us"
+      "title": "From creative content to corporates",
+      "subtitle": "Advertising, documentaries, event coverage, music videos, corporates, original creations.",
+      "text1": "We handle a wide range of formats. Our expertise has been honed through a broad diversity of productions, we work with passion, focusing on listening, advising, and remaining open to original collaborations.",
+      "text2": "We handle every stage of production - from script to screen it’s nice and clear !"
     },
     "achievements": {
-      "title": "Our Achievements",
-      "subtitle": "Discover our passionately crafted projects",
+      "title": "Work",
       "showMore": "Show more",
       "showLess": "Show less"
     },
+    "partners": "Got their trust",
     "contact": {
-      "title": "We’re near by, Come say hi !",
+      "title": "An idea, a project ?",
+      "subtitle": "Spill the beans !",
       "form": {
         "name": {
           "label": "Your name",
           "required": "Your name is required"
         },
         "email": {
-          "label": "Email adress",
+          "label": "Mail adress",
           "email": "Your email is invalid",
           "required": "Your email is required"
         },

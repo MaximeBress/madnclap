@@ -1,49 +1,27 @@
 {
   "Menu": {
     "home": "Accueil",
-    "about": "A propos",
+    "about": "À propos",
     "achievements": "Réalisations",
     "contact": "Contact"
   },
   "Homepage": {
-    "title": "Nous vous accompagnons dans vos productions audiovisuelles",
-    "subtitle": "Salut et bienvenue sur Mad’n’Clap !",
-    "Hero": {
-      "title": "Nous vous accompagnons dans la création de votre contenu audiovisuel"
-    },
-    "work": {
-      "title": "Du contenu créatif au film institutionnel",
-      "text": "Mad'n'Clap travaille avec un réseau de collaborateurs compétents et prend en charge de A à Z la création de votre contenu multimédia.",
-      "technicity": {
-        "title": "Technique",
-        "text": "Notre expertise technique garantit des résultats précis et professionnels. Chaque projet est réalisé avec une rigueur et une précision qui reflètent notre engagement envers l'excellence."
-      },
-      "style": {
-        "title": "Style",
-        "text": "Nous apportons une touche unique et créative à chaque projet. Notre style distinctif se caractérise par une esthétique moderne et innovante, toujours en phase avec les tendances actuelles."
-      },
-      "leadership": {
-        "title": "Maîtrise",
-        "text": "Avec une maîtrise parfaite des outils et des techniques, nous assurons une exécution impeccable de vos projets. Notre savoir-faire nous permet de surpasser les attentes et de livrer des résultats exceptionnels."
-      }
-    },
-    "accompanied": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion.",
-    "partners": "Ils nous font confiance",
+    "title": "On vous accompagne dans vos productions audiovisuelles",
     "about": {
-      "title": "Du contenu créatif au film corporate",
-      "subtitle": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.",
-      "text1": "Nous gérons de nombreux formats : Publicités, reportages, captations, clips, films de communication, et sommes ouverts à des collaborations originales et artistiques.",
-      "text2": "Nous prenons en charge toutes les étapes de production, avec fun, transparence et précision, de l’écriture à la diffusion.",
-      "button": "Contacter nous"
+      "title": "Du contenu créatif au film institutionnel",
+      "subtitle": "Publicités, reportages, captations, clips, films de communication, créations originales.",
+      "text1": "Nous gérons de nombreux formats. Notre savoir faire s’est aiguisé dans une grande diversité de productions, nous travaillons avec passion dans l’écoute, le conseil et l’ouverture aux collaborations originales.",
+      "text2": "De l’écriture à la diffusion, on assure chaque étape de production avec fun, transparence et précision"
     },
     "achievements": {
-      "title": "Nos Réalisations",
-      "subtitle": "Découvrez nos projets réalisés avec passion et expertise",
+      "title": "Réalisations",
       "showMore": "Voir plus",
       "showLess": "Voir moins"
     },
+    "partners": "On a leur confiance",
     "contact": {
-      "title": "Contactez nous",
+      "title": "Une idée, un projet ?",
+      "subtitle": "On vous écoute !",
       "form": {
         "name": {
           "label": "Votre nom",

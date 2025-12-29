@@ -2,9 +2,9 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
-import { useParams, usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useParams } from 'next/navigation';
+import { useState, useTransition } from 'react';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import {
     BiChevronDown,
     BiLogoFacebook,
@@ -29,11 +29,17 @@ import logo from '../../public/img/svg/logo.svg';
 export default function Navbar() {
     const t = useTranslations('Menu');
     const { locale } = useParams();
+    const router = useRouter();
+    const pathname = usePathname();
+    const [isPending, startTransition] = useTransition();
 
     const [isMobileMenuOpen, setIsMobileMenuOpenVisible] = useState(false);
-    const pathname = usePathname();
 
-    const [positionLanguage, setPosition] = useState('fr');
+    const handleLocaleChange = (newLocale: string) => {
+        startTransition(() => {
+            router.replace(pathname, { locale: newLocale });
+        });
+    };
 
     return (
         <nav className="fixed z-50 w-full transition-transform duration-300">
@@ -42,28 +48,28 @@ export default function Navbar() {
                     <Link href="/" className="cursor-pointer p-2">
                         <Image priority src={logo} width={50} height={50} alt="Logo MadNClap" />
                     </Link>
-                    <div className="hidden items-center gap-8 lg:flex">
+                    <div className="hidden items-center gap-8 lg:flex uppercase">
                         <Link
                             href="#home"
-                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:text-[#FAA5A5] ${pathname === '#home' ? 'text-[#FAA5A5]' : 'text-gray-600'}`}
+                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:underline ${pathname === '#home' ? 'underline' : 'text-gray-600'}`}
                         >
                             {t('home')}
                         </Link>
                         <Link
                             href="#about"
-                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:text-[#FAA5A5] ${pathname === '#about' ? 'text-[#FAA5A5]' : 'text-gray-600'}`}
+                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:underline ${pathname === '#about' ? 'underline' : 'text-gray-600'}`}
                         >
                             {t('about')}
                         </Link>
                         <Link
                             href="#achievements"
-                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:text-[#FAA5A5] ${pathname === '#achievements' ? 'text-[#FAA5A5]' : 'text-gray-600'}`}
+                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:underline ${pathname === '#achievements' ? 'underline' : 'text-gray-600'}`}
                         >
                             {t('achievements')}
                         </Link>
                         <Link
                             href="#contact"
-                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:text-[#FAA5A5] ${pathname === '#contact' ? 'text-[#FAA5A5]' : 'text-gray-600'}`}
+                            className={`text-md cursor-pointer rounded-md px-3 py-2 font-medium transition-colors duration-200 hover:underline ${pathname === '#contact' ? 'underline' : 'text-gray-600'}`}
                         >
                             Contact
                         </Link>
@@ -100,21 +106,16 @@ export default function Navbar() {
                         </Link>
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" className="cursor-pointer uppercase">
+                                <Button variant="ghost" className="cursor-pointer uppercase" disabled={isPending}>
                                     {locale}
                                     <BiChevronDown />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-56">
-                                <DropdownMenuRadioGroup value={positionLanguage} onValueChange={setPosition}>
+                                <DropdownMenuRadioGroup value={locale as string} onValueChange={handleLocaleChange}>
                                     {routing.locales.map((localeAvailable, index) => (
-                                        <DropdownMenuRadioItem key={index} value={localeAvailable}>
-                                            <Link
-                                                href={`/${localeAvailable}`}
-                                                className="dropdown-item uppercase hover:bg-[inherit] hover:!text-[#3f78e0]"
-                                            >
-                                                {localeAvailable}
-                                            </Link>
+                                        <DropdownMenuRadioItem key={index} value={localeAvailable} className="uppercase cursor-pointer">
+                                            {localeAvailable}
                                         </DropdownMenuRadioItem>
                                     ))}
                                 </DropdownMenuRadioGroup>
@@ -140,21 +141,16 @@ export default function Navbar() {
                     <div className="flex flex-col items-end gap-4">
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
-                                <Button variant="ghost" className="w-fit cursor-pointer !p-0 uppercase">
+                                <Button variant="ghost" className="w-fit cursor-pointer !p-0 uppercase" disabled={isPending}>
                                     {locale}
                                     <BiChevronDown />
                                 </Button>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-56">
-                                <DropdownMenuRadioGroup value={positionLanguage} onValueChange={setPosition}>
+                                <DropdownMenuRadioGroup value={locale as string} onValueChange={handleLocaleChange}>
                                     {routing.locales.map((localeAvailable, index) => (
-                                        <DropdownMenuRadioItem key={index} value={localeAvailable}>
-                                            <Link
-                                                href={`/${localeAvailable}`}
-                                                className="dropdown-item uppercase hover:bg-[inherit] hover:!text-[#3f78e0]"
-                                            >
-                                                {localeAvailable}
-                                            </Link>
+                                        <DropdownMenuRadioItem key={index} value={localeAvailable} className="uppercase cursor-pointer">
+                                            {localeAvailable}
                                         </DropdownMenuRadioItem>
                                     ))}
                                 </DropdownMenuRadioGroup>

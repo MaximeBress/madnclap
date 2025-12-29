@@ -1,7 +1,81 @@
+'use client';
+
 import { useTranslations } from 'next-intl';
+import { useParams } from 'next/navigation';
+import { useEffect } from 'react';
 
 export const Home = () => {
   const t = useTranslations('Homepage');
+  const { locale } = useParams();
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let lightbox: any;
+    let mounted = true;
+
+    const init = async () => {
+      // Apply background images
+      const bg = document.querySelectorAll('.bg-image');
+      bg.forEach((element) => {
+        const url = element.getAttribute('data-image-src');
+        if (url) {
+          (element as HTMLElement).style.backgroundImage = `url('${url}')`;
+        }
+      });
+
+      // Initialize GLightbox for Home section only
+      const { default: GLightbox } = await import('glightbox');
+      if (!mounted) return;
+
+      lightbox = GLightbox({
+        selector: '#home [data-glightbox]',
+        touchNavigation: true,
+        loop: false,
+        zoomable: false,
+        autoplayVideos: true,
+        moreLength: 0,
+        plyr: {
+          css: '',
+          js: '',
+          config: {
+            ratio: '',
+            fullscreen: {
+              enabled: false,
+              iosNative: false,
+            },
+            youtube: {
+              noCookie: true,
+              rel: 0,
+              iv_load_policy: 3,
+            },
+            vimeo: {
+              byline: false,
+              portrait: false,
+              title: false,
+              transparent: false,
+            },
+          },
+        },
+      });
+
+      // Reinitialize ScrollCue for animations
+      if (typeof window !== 'undefined') {
+        const windowWithScrollCue = window as Window & { scrollCue?: { init: () => void } };
+        if (windowWithScrollCue.scrollCue) {
+          windowWithScrollCue.scrollCue.init();
+        }
+      }
+    };
+
+    init();
+
+    return () => {
+      mounted = false;
+      if (lightbox?.destroy) {
+        lightbox.destroy();
+      }
+    };
+  }, [locale]);
 
   return (
     <section
