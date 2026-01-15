@@ -162,7 +162,7 @@ export const Contact = () => {
                         <div className="w-full max-w-full flex-[0_0_auto] !px-[15px] !text-center">
                           <button
                             type="submit"
-                            className="btn btn-send !rounded-[50rem] border-[#FAA5A5] !bg-[#FAA5A5] !text-white hover:!border-[#FAA5A5] hover:bg-[#FAA5A5] hover:text-white active:border-[#FAA5A5] active:bg-[#FAA5A5] active:text-white disabled:border-[#FAA5A5] disabled:bg-[#FAA5A5] disabled:text-white"
+                            className="text-md hover:font-bold underline hover:no-underline disabled:opacity-50"
                           >
                             {t('contact.form.button')}
                           </button>

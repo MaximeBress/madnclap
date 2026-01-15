@@ -127,7 +127,7 @@ export const Achievements = ({ videos }: { videos: Promise<{ data: Video[] }> })
                             ))}
                     </div>
                     <button
-                        className="btn w-fit self-center !rounded-[50rem] border-[#FAA5A5] !bg-[#FAA5A5] !text-white hover:!border-[#FAA5A5] hover:bg-[#FAA5A5] hover:text-white active:border-[#FAA5A5] active:bg-[#FAA5A5] active:text-white disabled:border-[#FAA5A5] disabled:bg-[#FAA5A5] disabled:text-white"
+                        className="underline hover:no-underline hover:font-bold w-fit text-lg self-center"
                         onClick={() => setShowMore(!showMore)}
                     >
                         {showMore ? t('achievements.showLess') : t('achievements.showMore')}

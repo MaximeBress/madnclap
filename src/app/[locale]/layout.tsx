@@ -1,4 +1,5 @@
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
+import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
 import Script from 'next/script';
 import { ToastContainer } from 'react-toastify';
@@ -6,10 +7,13 @@ import { ToastContainer } from 'react-toastify';
 import '@/app/css/plugins.css';
 import '@/app/css/globals.css';
 import '@/app/css/yellow.css';
-import '@/app/css/urbanist.css';
 import { Footer } from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { routing } from '@/i18n/routing';
+
+const bahnschrift = localFont({
+  src: '../../../public/fonts/bahnschrift.ttf',
+});
 
 export default async function RootLayout({
   children,
@@ -24,7 +28,7 @@ export default async function RootLayout({
   }
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={bahnschrift.className}>
       <body className="onepage">
         <NextIntlClientProvider>
           <Navbar />

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -23,7 +23,6 @@
 @theme {
     --font-IBMPlexSerif: "IBM Plex Serif", "serif";
     --font-SpaceGrotesk: "Space Grotesk", "sans-serif";
-    --font-Manrope: "Manrope", "sans-serif";
     --font-Unicons: "Unicons";
     --font-Monospace: "SFMono-Regular,Menlo,Monaco,Consolas", "Liberation Mono", "Courier New", "monospace";
     --font-Custom: "Custom";
@@ -265,7 +264,7 @@ body {
 }
 
 body {
-    @apply text-[0.8rem] font-medium leading-[1.7] text-[#60697b] bg-[#fefefe] m-0 font-Manrope;
+    @apply text-[0.8rem] font-medium leading-[1.7] text-[#60697b] bg-[#fefefe] m-0;
 }
 
 body {
@@ -1624,7 +1623,7 @@ blockquote.text-center.icon-top:before {
 }
 
 .code-wrapper .btn-clipboard {
-    @apply absolute cursor-pointer text-[0.6rem] z-[3] px-[0.45rem] py-[0.1rem] right-2 top-2 font-Manrope transform-none hover:text-[#262b32] hover:bg-[white] hover:border-[white];
+    @apply absolute cursor-pointer text-[0.6rem] z-[3] px-[0.45rem] py-[0.1rem] right-2 top-2 transform-none hover:text-[#262b32] hover:bg-[white] hover:border-[white];
 }
 
 .code-wrapper pre {
@@ -3724,7 +3723,7 @@ button.hamburger span, button.hamburger:before {
 }
 
 .tooltip {
-    @apply p-[0.5rem_0.75rem] text-white bg-[#3f78e0] opacity-[0.98] rounded-[0.4rem] font-medium pointer-events-none font-Manrope
+    @apply p-[0.5rem_0.75rem] text-white bg-[#3f78e0] opacity-[0.98] rounded-[0.4rem] font-medium pointer-events-none
 }
 
 .bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow, .bs-tooltip-top .tooltip-arrow {
@@ -3768,7 +3767,7 @@ button.hamburger span, button.hamburger:before {
 }
 
 .popover {
-    @apply z-[1070] block max-w-[276px] not-italic font-medium leading-[1.7] text-left text-start no-underline normal-case tracking-[normal] break-normal whitespace-normal text-[0.8rem] bg-white bg-clip-padding border shadow-[0rem_0rem_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(164,174,198,0.2)] [word-wrap:break-word] font-Manrope ;
+    @apply z-[1070] block max-w-[276px] not-italic font-medium leading-[1.7] text-left text-start no-underline normal-case tracking-[normal] break-normal whitespace-normal text-[0.8rem] bg-white bg-clip-padding border shadow-[0rem_0rem_1.25rem_rgba(30,34,40,0.04)] rounded-[0.4rem] border-solid border-[rgba(164,174,198,0.2)] [word-wrap:break-word] ;
     text-shadow: none;
     word-spacing: normal;
     line-break: auto
